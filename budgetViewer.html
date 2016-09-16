@@ -27,9 +27,21 @@ var budget = new budgetForm();
 function displayMessage() {
 
 // Prompt for amounts
-rentAmt = document.budgetForm.rent.value;
-rentAmt = parseFloat(rentAmt);
+	rentAmt = document.budgetForm.rent.value;
+	rentAmt = parseFloat(rentAmt);
+	foodAmt = document.budgetForm.food.value;
+	foodAmt = parseFloat(foodAmt);
+	utilityAmt = document.budgetForm.utility.value;
+	utilityAmt = parseFloat(utilityAmt);
+	otherAmt = document.budgetForm.other.value;
+	otherAmt = parseFloat(otherAmt);
 
+	totExpenses = foodAmt + utilityAmt + otherAmt + rentAmt;
+
+	rentPct = 100.0 * (rentAmt/totExpenses);
+	foodPct = 100.0 * (foodAmt/totExpenses);
+	utilityPct = 100.0 * (utilityAmt/totExpenses);
+	otherPct = 100.0 * (otherAmt/totExpenses);
 
 // Total amounts and calculate percentages
 
